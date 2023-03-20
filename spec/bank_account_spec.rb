@@ -41,6 +41,17 @@ describe BankAccount do
     expected_output = "date || credit || debit || balance \n" +
                       "10/01/2023 || 1000.00 ||  || 1000.00 \n" 
     expect { bank_account.print_statement }.to output(expected_output).to_stdout
-    
+  end 
+
+  it 'makes 1 deposit and prints a formatted statement' do 
+    bank_account = BankAccount.new
+    bank_account.deposit("10/01/2023", "1000.00")
+    bank_account.deposit("13/01/2023", "2000.00")
+    bank_account.withdrawal("14/01/2023", "500.00")
+    expected_output = "date || credit || debit || balance \n" +
+                      "14/01/2023 ||  || 500.00 || 2500.00 \n" +
+                      "13/01/2023 || 2000.00 ||  || 3000.00 \n" + 
+                      "10/01/2023 || 1000.00 ||  || 1000.00 \n"
+    expect { bank_account.print_statement }.to output(expected_output).to_stdout
   end 
 end 
