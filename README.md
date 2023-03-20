@@ -1,6 +1,4 @@
-Describe how you approached designing your solution to the problem.
-
-Approach:
+## Approach:
 
 Granted this application is only to be run in a REPL, there is some assumption of knowledge by the user.
 
@@ -10,12 +8,13 @@ I started my process by following a recipe format for a single class in Ruby, as
 
 Once the recipe was completed, a lot of the heavy mental lifting was complete - and I was able to work through test driving my code from there.
 
-Structure:
+## Structure:
+
 This programe is held within a single class, as requested by the test specifications.
 
 This initially started with only 4 methods (including the initialize method) but I also incorporated two very short methods to simply return the values stored in our class variables. This proved significanlty valuable during the testing process as I was able to build upon my methods without having full functionality immediately at the start.
 
-How to use:
+## How to use:
 
 You'll need to have Ruby downloaded on your local machine to run this program using irb (the Ruby REPL).
 
