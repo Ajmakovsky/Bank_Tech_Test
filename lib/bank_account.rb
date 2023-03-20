@@ -14,7 +14,12 @@ class BankAccount
     @current_balance = @current_balance + amount
   end 
 
-  def withdrawal 
+  def withdrawal(date, amount)
+    new_balance = @current_balance - amount 
+    transaction = [date, amount, new_balance]
+    @transactions << transaction
+
+    @current_balance = @current_balance - amount
   end 
 
   def print_statement
@@ -28,6 +33,7 @@ class BankAccount
     return @transactions
   end 
 end 
+
 
 
 
