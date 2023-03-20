@@ -1,4 +1,6 @@
 require 'bank_account'
+require 'simplecov'
+SimpleCov.start
 
 describe BankAccount do 
 
