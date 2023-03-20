@@ -1,3 +1,5 @@
+# Bank Tech Test
+
 ## Approach:
 
 Granted this application is only to be run in a REPL, there is some assumption of knowledge by the user.
@@ -30,7 +32,9 @@ If you already have these files downloaded on your local machine, you can skip t
 
 Otherwise, please navigate via the command line to wherever you'd like to store the project files on your local machine. Once there, run the following command:
 
+```
 git clone https://github.com/Ajmakovsky/Bank_Tech_Test.git
+```
 
 Once done, you should see the following if this has gone correctly:
 
