@@ -16,5 +16,6 @@ class BankAccount
   end 
 
   def balance
+    return @current_balance
   end
 end 
