@@ -39,10 +39,9 @@ class BankAccount
 end 
 
 
+# bank_account = BankAccount.new
 
-bank_account = BankAccount.new
-
-bank_account.deposit("10/01/2023", "1000.00")
-bank_account.deposit("13/01/2023", "2000.00")
-bank_account.withdrawal("14/01/2023", "500.00")
-bank_account.print_statement
+# bank_account.deposit("10/01/2023", "1000.00")
+# bank_account.deposit("13/01/2023", "2000.00")
+# bank_account.withdrawal("14/01/2023", "500.00")
+# bank_account.print_statement
