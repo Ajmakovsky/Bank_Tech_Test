@@ -3,10 +3,15 @@
 class BankAccount
   def initialize
     @transactions = []
-    @current_balance = 0 
+    @current_balance = 0.00 
   end 
 
-  def deposit
+  def deposit(date, amount)
+    new_balance = @current_balance + amount 
+    transaction = [date, amount, new_balance]
+    @transactions << transaction
+
+    @current_balance = @current_balance + amount
   end 
 
   def withdrawal 
@@ -18,4 +23,11 @@ class BankAccount
   def balance
     return @current_balance
   end
+
+  def transactions_list
+    return @transactions
+  end 
 end 
+
+
+
