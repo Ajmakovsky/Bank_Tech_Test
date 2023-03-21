@@ -56,4 +56,10 @@ describe BankAccount do
     expect(transactions[2].balance).to eq 2500.00
     expect(bank_account.balance).to eq 2500.00
   end 
+
+  it 'raises an error if the withdrawal attempt is more than the current balance' do 
+    bank_account = BankAccount.new
+    
+    expect { bank_account.withdrawal("14/01/2023", "500.00") }.to raise_error(ArgumentError, "Insufficient funds")
+  end
 end 

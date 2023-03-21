@@ -15,6 +15,10 @@ class BankAccount
   end 
 
   def withdrawal(date, amount)
+    if amount.to_f > @current_balance
+      raise ArgumentError, "Insufficient funds"
+    end
+    
     new_balance = @current_balance - amount.to_f
     transaction = Transaction.new(date, nil, amount.to_f, new_balance)
     @transactions << transaction
