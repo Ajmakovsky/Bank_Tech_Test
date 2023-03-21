@@ -1,15 +1,14 @@
 require_relative './transaction'
-require_relative './statement_creator'
+# require_relative './statement'
 
 class BankAccount
   def initialize
     @transactions = []
     @current_balance = 0.00 
+    @new_statement = StatementCreator.new
   end 
 
-
   def deposit(date, amount)
-
     new_balance = (@current_balance + amount.to_f)
     transaction = Transaction.new(date, amount.to_f, nil, new_balance)
     @transactions << transaction
@@ -25,7 +24,6 @@ class BankAccount
     @current_balance = new_balance
   end 
 
-
   def balance
     return @current_balance
   end
@@ -34,19 +32,19 @@ class BankAccount
     return @transactions
   end 
 
-  def statement
-    new_statement = StatementCreator.new
-    return new_statement.print_statement(@transactions)
-  end 
+  # def print_statement
+  #   return @new_statement.format_statement(@transactions)
+  # end 
 end 
 
 
-bank_account = BankAccount.new
+# bank_account = BankAccount.new
 
-bank_account.deposit("10/01/2023", 1000.32)
-bank_account.deposit("13/01/2023", 2000)
-bank_account.withdrawal("14/01/2023", 500.12)
-bank_account.statement
+# bank_account.deposit("10/01/2023", 1000.32)
+# bank_account.deposit("13/01/2023", 2000)
+# bank_account.withdrawal("14/01/2023", 500.12)
+# p bank_account.transactions_list
+# # bank_account.print_statement
 
 
 
