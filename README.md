@@ -10,13 +10,21 @@ I started my process by following a recipe format for a single class in Ruby, as
 
 Once the recipe was completed, a lot of the heavy mental lifting was complete - and I was able to work through test driving my code from there.
 
+I did start out with a single class but realised by class was actually doing too much, so I expaned this into 3 classes to then unit test and integration test.
+
 ## Structure:
 
-This programe is held within a single class, as requested by the test specifications.
+This programe is held across 3 classes in Ruby.
 
-This initially started with only 4 methods (including the initialize method) but I also incorporated two very short methods to simply return the values stored in our class variables. This proved significanlty valuable during the testing process as I was able to build upon my methods without having full functionality immediately at the start.
+This initially started with only a single class and 4 methods (including the initialize method) but I also incorporated two very short methods within the BankAccount class to simply return the values stored in our class variables. This proved significanlty valuable during the testing process as I was able to build upon my methods without having full functionality immediately at the start.
 
-The program holds an initialize method to hold class variables to be accessed throughout the program. It then has 2 methods for creating deposits and withdrawals on the bank account application.
+The transaction class is solely a model for transactions inputted via the Bank Account Class.
+
+The BankAccount class holds the functionality to deposit and withdrawal from the account.
+
+Lastly, the Statement Class holds the functionality to output a formatted statement aligned with the test specifications. It ensures there are the correct number of decimals following any numbers in output, and visually formats this.
+
+There are unit tests for the BankAccount and Statement classes, and integration tests for the overall functionality of the program.
 
 ## How to use:
 
