@@ -2,7 +2,7 @@ require_relative './transaction'
 require_relative './bank_account'
 
 
-class StatementCreator
+class Statement
 
   def format_statement(bank_account)
 

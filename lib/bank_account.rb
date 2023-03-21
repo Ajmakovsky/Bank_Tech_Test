@@ -1,11 +1,9 @@
 require_relative './transaction'
-# require_relative './statement'
 
 class BankAccount
   def initialize
     @transactions = []
     @current_balance = 0.00 
-    @new_statement = StatementCreator.new
   end 
 
   def deposit(date, amount)
@@ -31,10 +29,6 @@ class BankAccount
   def transactions_list
     return @transactions
   end 
-
-  # def print_statement
-  #   return @new_statement.format_statement(@transactions)
-  # end 
 end 
 
 
@@ -46,20 +40,3 @@ end
 # p bank_account.transactions_list
 # # bank_account.print_statement
 
-
-
-  # def print_statement
-  #   print("date || credit || debit || balance \n")
-
-  #   @transactions.reverse.each do |transaction|
-  #     print("#{transaction.date} || #{serialize(transaction.credit)} || #{serialize(transaction.debit)} || #{serialize(transaction.balance)} \n")
-  #   end
-  # end
-
-    # def serialize(number)
-  #   if number == nil 
-  #     return nil 
-  #   else 
-  #     return new_number = ("%.2f" % number)
-  #   end 
-  # end 
