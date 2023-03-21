@@ -87,3 +87,5 @@ bank_account.print_statement
 ```
 
 When interacting via the REPL, the methods deposit and withdrawl simply take two strings, the first being the date of the transaction and secondly the amount.
+
+[Photo here](./Screenshot%202023-03-21%20at%2019.04.30.png)
