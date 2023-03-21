@@ -1,3 +1,4 @@
+require_relative './transaction'
 
 class BankAccount
   def initialize
@@ -5,29 +6,38 @@ class BankAccount
     @current_balance = 0.00 
   end 
 
+  # def serialize(number)
+  #   if number == nil 
+  #     return nil 
+  #   else 
+  #     return new_number = ("%.2f" % number)
+  #   end 
+  # end 
+
   def deposit(date, amount)
-    new_balance = @current_balance + amount.to_f
-    transaction = {date: date, credit: amount, debit: nil, balance: new_balance}
+
+    new_balance = (@current_balance + amount.to_f)
+    transaction = Transaction.new(date, amount.to_f, nil, new_balance)
     @transactions << transaction
 
-    @current_balance = @current_balance + amount.to_f
+    @current_balance = new_balance
   end 
 
   def withdrawal(date, amount)
     new_balance = @current_balance - amount.to_f
-    transaction = {date: date, credit: nil, debit: amount, balance: new_balance}
+    transaction = Transaction.new(date, nil, amount.to_f, new_balance)
     @transactions << transaction
 
-    @current_balance = @current_balance - amount.to_f
+    @current_balance = new_balance
   end 
 
-  def print_statement
-    print("date || credit || debit || balance \n")
+  # def print_statement
+  #   print("date || credit || debit || balance \n")
 
-    @transactions.reverse.each do |transaction|
-      print("#{transaction[:date]} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]}0 \n")
-    end
-  end
+  #   @transactions.reverse.each do |transaction|
+  #     print("#{transaction.date} || #{serialize(transaction.credit)} || #{serialize(transaction.debit)} || #{serialize(transaction.balance)} \n")
+  #   end
+  # end
 
   def balance
     return @current_balance
@@ -41,7 +51,7 @@ end
 
 # bank_account = BankAccount.new
 
-# bank_account.deposit("10/01/2023", "1000.00")
-# bank_account.deposit("13/01/2023", "2000.00")
-# bank_account.withdrawal("14/01/2023", "500.00")
+# bank_account.deposit("10/01/2023", 1000.32)
+# bank_account.deposit("13/01/2023", 2000)
+# bank_account.withdrawal("14/01/2023", 500.12)
 # bank_account.print_statement
